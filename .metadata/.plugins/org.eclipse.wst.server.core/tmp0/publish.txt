@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Wed Apr 25 11:23:36 CST 2018
+org.eclipse.jst.j2ee.server\:collectionsystem-portal=WEB-INF/lib/collectionsystem-portal-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:collectionsystem-common=WEB-INF/lib/collectionsystem-common-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:collectionsystem-manager=WEB-INF/lib/collectionsystem-manager-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:/Volumes/m2/share/maven/org/springframework/spring-web/4.0.0.RELEASE/spring-web-4.0.0.RELEASE.jar=WEB-INF/lib/spring-web-4.0.0.RELEASE.jar

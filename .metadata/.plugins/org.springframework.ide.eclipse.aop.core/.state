@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="collectionsystem-portal"/>
+<aop-project name="collectionsystem-manager"/>
+<aop-project name="collectionsystem-web"/>
+<aop-project name="collectionsystem-common"/>
+</aop-reference-model>

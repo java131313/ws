@@ -1,0 +1,21 @@
+INDEX VERSION 1.130
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3057412715.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2996221643.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2061260795.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/775480744.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/133052616.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4112671972.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3473313426.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4052269124.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/714225928.index
+/collectionsystem-web/src/main/java
+/Users/kxy/Desktop/ws/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/54846568.index
+/collectionsystem-web/src/main/java
