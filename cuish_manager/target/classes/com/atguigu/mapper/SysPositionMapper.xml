@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.SysPositionMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.SysPosition">
+    
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
+    <result column="order_no" jdbcType="INTEGER" property="orderNo" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    
+    delete from sys_position
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.SysPosition">
+    
+    insert into sys_position (id, name, parent_id, 
+      order_no, description, path, 
+      type, create_time, modify_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
+      #{orderNo,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="java.lang.String">
+  
+    update sys_position
+    set name = #{name,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      order_no = #{orderNo,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="update" parameterType="com.atguigu.bean.SysPosition">
+  <!-- 
+update sys_position  set name = ?,       parent_id = ?,    
+     order_no = ?,       description = ?, 
+        path = ?,       type = ?     create_time = ?,       modify_time = ?  
+      where id = ?
+     create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP} 
+   -->
+    
+    update sys_position
+    set name = #{name,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      order_no = #{orderNo,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    
+    select id, name, parent_id, order_no, description, path, type, create_time, modify_time
+    from sys_position
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+   
+    select id, name, parent_id, order_no, description, path, type, create_time, modify_time
+    from sys_position
+  </select>
+</mapper>

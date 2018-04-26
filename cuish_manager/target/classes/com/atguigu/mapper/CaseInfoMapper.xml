@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.CaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.CaseInfo">
+    
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="case_code" jdbcType="VARCHAR" property="caseCode" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="collec_state_id" jdbcType="VARCHAR" property="collecStateId" />
+    <result column="visit_state_id" jdbcType="INTEGER" property="visitStateId" />
+    <result column="batch_id" jdbcType="VARCHAR" property="batchId" />
+    <result column="case_date" jdbcType="TIMESTAMP" property="caseDate" />
+    <result column="case_backdate" jdbcType="TIMESTAMP" property="caseBackdate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="cus_no" jdbcType="VARCHAR" property="cusNo" />
+    <result column="userId" jdbcType="VARCHAR" property="userid" />
+    <result column="account_no" jdbcType="VARCHAR" property="accountNo" />
+    <result column="case_app_no" jdbcType="VARCHAR" property="caseAppNo" />
+    <result column="case_file_no" jdbcType="VARCHAR" property="caseFileNo" />
+    <result column="case_name" jdbcType="VARCHAR" property="caseName" />
+    <result column="case_sex" jdbcType="VARCHAR" property="caseSex" />
+    <result column="case_is_marriage" jdbcType="VARCHAR" property="caseIsMarriage" />
+    <result column="case_birthday" jdbcType="TIMESTAMP" property="caseBirthday" />
+    <result column="case_age" jdbcType="INTEGER" property="caseAge" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="district_id" jdbcType="VARCHAR" property="districtId" />
+    <result column="district_name" jdbcType="VARCHAR" property="districtName" />
+    <result column="area_id" jdbcType="VARCHAR" property="areaId" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="bank_account" jdbcType="VARCHAR" property="bankAccount" />
+    <result column="case_house_id" jdbcType="VARCHAR" property="caseHouseId" />
+    <result column="case_card" jdbcType="VARCHAR" property="caseCard" />
+    <result column="case_num" jdbcType="VARCHAR" property="caseNum" />
+    <result column="case_num_id" jdbcType="VARCHAR" property="caseNumId" />
+    <result column="case_position" jdbcType="VARCHAR" property="casePosition" />
+    <result column="case_department" jdbcType="VARCHAR" property="caseDepartment" />
+    <result column="case_position_level" jdbcType="VARCHAR" property="casePositionLevel" />
+    <result column="account_name" jdbcType="VARCHAR" property="accountName" />
+    <result column="lend_institution" jdbcType="VARCHAR" property="lendInstitution" />
+    <result column="principal" jdbcType="DECIMAL" property="principal" />
+    <result column="surplus_principal" jdbcType="DECIMAL" property="surplusPrincipal" />
+    <result column="breach" jdbcType="DECIMAL" property="breach" />
+    <result column="case_money" jdbcType="DECIMAL" property="caseMoney" />
+    <result column="case_last_money" jdbcType="DECIMAL" property="caseLastMoney" />
+    <result column="case_last_date" jdbcType="TIMESTAMP" property="caseLastDate" />
+    <result column="account_money" jdbcType="DECIMAL" property="accountMoney" />
+    <result column="loan_contract" jdbcType="VARCHAR" property="loanContract" />
+    <result column="loan_money" jdbcType="DECIMAL" property="loanMoney" />
+    <result column="loan_rate" jdbcType="DECIMAL" property="loanRate" />
+    <result column="loan_startdate" jdbcType="TIMESTAMP" property="loanStartdate" />
+    <result column="loan_enddate" jdbcType="TIMESTAMP" property="loanEnddate" />
+    <result column="contract_money" jdbcType="DECIMAL" property="contractMoney" />
+    <result column="overdue_money" jdbcType="DECIMAL" property="overdueMoney" />
+    <result column="overdue_principal" jdbcType="DECIMAL" property="overduePrincipal" />
+    <result column="overdue_expense" jdbcType="DECIMAL" property="overdueExpense" />
+    <result column="overdue_age" jdbcType="VARCHAR" property="overdueAge" />
+    <result column="overdue_penalty" jdbcType="DECIMAL" property="overduePenalty" />
+    <result column="overdue_interest" jdbcType="DECIMAL" property="overdueInterest" />
+    <result column="overdue_days" jdbcType="INTEGER" property="overdueDays" />
+    <result column="overdue_date" jdbcType="TIMESTAMP" property="overdueDate" />
+    <result column="overdue_periods" jdbcType="INTEGER" property="overduePeriods" />
+    <result column="once_overdue_periods" jdbcType="INTEGER" property="onceOverduePeriods" />
+    <result column="overdue_loan" jdbcType="DECIMAL" property="overdueLoan" />
+    <result column="overdue_principal_balance" jdbcType="DECIMAL" property="overduePrincipalBalance" />
+    <result column="overdue_compound" jdbcType="DECIMAL" property="overdueCompound" />
+    <result column="social_security_no" jdbcType="VARCHAR" property="socialSecurityNo" />
+    <result column="social_card_no" jdbcType="VARCHAR" property="socialCardNo" />
+    <result column="agent_rate" jdbcType="DECIMAL" property="agentRate" />
+    <result column="entrust_rate" jdbcType="DECIMAL" property="entrustRate" />
+    <result column="credit_id" jdbcType="VARCHAR" property="creditId" />
+    <result column="stay_periods" jdbcType="INTEGER" property="stayPeriods" />
+    <result column="month_repayment" jdbcType="DECIMAL" property="monthRepayment" />
+    <result column="last_repayment" jdbcType="DECIMAL" property="lastRepayment" />
+    <result column="stay_principal" jdbcType="DECIMAL" property="stayPrincipal" />
+    <result column="stay_expense" jdbcType="DECIMAL" property="stayExpense" />
+    <result column="stay_interest" jdbcType="DECIMAL" property="stayInterest" />
+    <result column="bill" jdbcType="INTEGER" property="bill" />
+    <result column="repayment_periods" jdbcType="INTEGER" property="repaymentPeriods" />
+    <result column="commodity" jdbcType="VARCHAR" property="commodity" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_phone" jdbcType="VARCHAR" property="companyPhone" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="company_zipcode" jdbcType="VARCHAR" property="companyZipcode" />
+    <result column="mobile1" jdbcType="VARCHAR" property="mobile1" />
+    <result column="mobile2" jdbcType="VARCHAR" property="mobile2" />
+    <result column="family_phone" jdbcType="VARCHAR" property="familyPhone" />
+    <result column="family_address" jdbcType="VARCHAR" property="familyAddress" />
+    <result column="family_zipcode" jdbcType="VARCHAR" property="familyZipcode" />
+    <result column="domicile" jdbcType="VARCHAR" property="domicile" />
+    <result column="mark_id" jdbcType="VARCHAR" property="markId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="is_verify" jdbcType="VARCHAR" property="isVerify" />
+    <result column="verify_date" jdbcType="TIMESTAMP" property="verifyDate" />
+    <result column="repayment_type" jdbcType="VARCHAR" property="repaymentType" />
+    <result column="protocol_no" jdbcType="VARCHAR" property="protocolNo" />
+    <result column="loan_area" jdbcType="VARCHAR" property="loanArea" />
+    <result column="actual_loan_money" jdbcType="DECIMAL" property="actualLoanMoney" />
+    <result column="interest_money" jdbcType="DECIMAL" property="interestMoney" />
+    <result column="penalty_reference" jdbcType="VARCHAR" property="penaltyReference" />
+    <result column="compound_interest_reference" jdbcType="VARCHAR" property="compoundInterestReference" />
+    <result column="quota_no" jdbcType="VARCHAR" property="quotaNo" />
+    <result column="quota_manager1" jdbcType="VARCHAR" property="quotaManager1" />
+    <result column="quota_manager2" jdbcType="VARCHAR" property="quotaManager2" />
+    <result column="manager_phone" jdbcType="VARCHAR" property="managerPhone" />
+    <result column="collateral_no" jdbcType="VARCHAR" property="collateralNo" />
+    <result column="collateral_id" jdbcType="VARCHAR" property="collateralId" />
+    <result column="collateral_name" jdbcType="VARCHAR" property="collateralName" />
+    <result column="collateral_address" jdbcType="VARCHAR" property="collateralAddress" />
+    <result column="collateral_evalua" jdbcType="VARCHAR" property="collateralEvalua" />
+    <result column="repay_date" jdbcType="INTEGER" property="repayDate" />
+    <result column="total_construc" jdbcType="VARCHAR" property="totalConstruc" />
+    <result column="regione" jdbcType="VARCHAR" property="regione" />
+    <result column="sub_center" jdbcType="VARCHAR" property="subCenter" />
+    <result column="sales_dep" jdbcType="VARCHAR" property="salesDep" />
+    <result column="consult_fee" jdbcType="DECIMAL" property="consultFee" />
+    <result column="audit_fee" jdbcType="DECIMAL" property="auditFee" />
+    <result column="service_fee" jdbcType="DECIMAL" property="serviceFee" />
+    <result column="adviser_fee" jdbcType="DECIMAL" property="adviserFee" />
+    <result column="fee_total" jdbcType="DECIMAL" property="feeTotal" />
+    <result column="initial_repay" jdbcType="TIMESTAMP" property="initialRepay" />
+    <result column="due_periods" jdbcType="INTEGER" property="duePeriods" />
+    <result column="penalty_days" jdbcType="DECIMAL" property="penaltyDays" />
+    <result column="debit_bank_code" jdbcType="VARCHAR" property="debitBankCode" />
+    <result column="debit_bank_name" jdbcType="VARCHAR" property="debitBankName" />
+    <result column="debit_account" jdbcType="VARCHAR" property="debitAccount" />
+    <result column="relief_policy" jdbcType="VARCHAR" property="reliefPolicy" />
+    <result column="case_assigned_id" jdbcType="VARCHAR" property="caseAssignedId" />
+    <result column="case_assign_id" jdbcType="VARCHAR" property="caseAssignId" />
+    <result column="case_assign_name" jdbcType="VARCHAR" property="caseAssignName" />
+    <result column="case_assign_time" jdbcType="TIMESTAMP" property="caseAssignTime" />
+    <result column="create_emp_id" jdbcType="VARCHAR" property="createEmpId" />
+    <result column="modify_emp_id" jdbcType="VARCHAR" property="modifyEmpId" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="next_follow_time" jdbcType="TIMESTAMP" property="nextFollowTime" />
+    <result column="next_follow_state" jdbcType="VARCHAR" property="nextFollowState" />
+    <result column="last_phone_time" jdbcType="TIMESTAMP" property="lastPhoneTime" />
+    <result column="is_update" jdbcType="CHAR" property="isUpdate" />
+    <result column="handle" jdbcType="VARCHAR" property="handle" />
+    <result column="in_derate" jdbcType="DECIMAL" property="inDerate" />
+    <result column="out_derate" jdbcType="DECIMAL" property="outDerate" />
+    <result column="color" jdbcType="INTEGER" property="color" />
+    <result column="case_warn" jdbcType="VARCHAR" property="caseWarn" />
+    <result column="start_card_date" jdbcType="TIMESTAMP" property="startCardDate" />
+    <result column="stop_card_date" jdbcType="TIMESTAMP" property="stopCardDate" />
+    <result column="credit_limit" jdbcType="DECIMAL" property="creditLimit" />
+    <result column="policy_expire" jdbcType="TIMESTAMP" property="policyExpire" />
+    <result column="collec_type" jdbcType="VARCHAR" property="collecType" />
+    <result column="late_fee" jdbcType="DECIMAL" property="lateFee" />
+    <result column="domicile_zipcode" jdbcType="VARCHAR" property="domicileZipcode" />
+    <result column="bill_address" jdbcType="VARCHAR" property="billAddress" />
+    <result column="bill_zipcode" jdbcType="VARCHAR" property="billZipcode" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="repayment_term" jdbcType="VARCHAR" property="repaymentTerm" />
+    <result column="old_collec_record" jdbcType="LONGVARCHAR" property="oldCollecRecord" />
+    <result column="remain_history" jdbcType="LONGVARCHAR" property="remainHistory" />
+    <result column="remark1" jdbcType="LONGVARCHAR" property="remark1" />
+    <result column="remark2" jdbcType="LONGVARCHAR" property="remark2" />
+    <result column="collec_remark" jdbcType="LONGVARCHAR" property="collecRemark" />
+    <result column="cus_introduc" jdbcType="LONGVARCHAR" property="cusIntroduc" />
+    <result column="his_remark" jdbcType="LONGVARCHAR" property="hisRemark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+   
+    delete from case_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.CaseInfo">
+    
+    insert into case_info (id, case_code, state, 
+      collec_state_id, visit_state_id, batch_id, 
+      case_date, case_backdate, end_date, 
+      version, cus_no, userId, 
+      account_no, case_app_no, case_file_no, 
+      case_name, case_sex, case_is_marriage, 
+      case_birthday, case_age, province_id, 
+      province_name, city_id, city_name, 
+      district_id, district_name, area_id, 
+      area_name, bank_account, case_house_id, 
+      case_card, case_num, case_num_id, 
+      case_position, case_department, case_position_level, 
+      account_name, lend_institution, principal, 
+      surplus_principal, breach, case_money, 
+      case_last_money, case_last_date, account_money, 
+      loan_contract, loan_money, loan_rate, 
+      loan_startdate, loan_enddate, contract_money, 
+      overdue_money, overdue_principal, overdue_expense, 
+      overdue_age, overdue_penalty, overdue_interest, 
+      overdue_days, overdue_date, overdue_periods, 
+      once_overdue_periods, overdue_loan, overdue_principal_balance, 
+      overdue_compound, social_security_no, social_card_no, 
+      agent_rate, entrust_rate, credit_id, 
+      stay_periods, month_repayment, last_repayment, 
+      stay_principal, stay_expense, stay_interest, 
+      bill, repayment_periods, commodity, 
+      company_name, company_phone, company_address, 
+      company_zipcode, mobile1, mobile2, 
+      family_phone, family_address, family_zipcode, 
+      domicile, mark_id, user_name, 
+      is_verify, verify_date, repayment_type, 
+      protocol_no, loan_area, actual_loan_money, 
+      interest_money, penalty_reference, compound_interest_reference, 
+      quota_no, quota_manager1, quota_manager2, 
+      manager_phone, collateral_no, collateral_id, 
+      collateral_name, collateral_address, collateral_evalua, 
+      repay_date, total_construc, regione, 
+      sub_center, sales_dep, consult_fee, 
+      audit_fee, service_fee, adviser_fee, 
+      fee_total, initial_repay, due_periods, 
+      penalty_days, debit_bank_code, debit_bank_name, 
+      debit_account, relief_policy, case_assigned_id, 
+      case_assign_id, case_assign_name, case_assign_time, 
+      create_emp_id, modify_emp_id, modify_time, 
+      create_time, status, org_id, 
+      org_name, next_follow_time, next_follow_state, 
+      last_phone_time, is_update, handle, 
+      in_derate, out_derate, color, 
+      case_warn, start_card_date, stop_card_date, 
+      credit_limit, policy_expire, collec_type, 
+      late_fee, domicile_zipcode, bill_address, 
+      bill_zipcode, email, currency, 
+      repayment_term, old_collec_record, remain_history, 
+      remark1, remark2, collec_remark, 
+      cus_introduc, his_remark)
+    values (#{id,jdbcType=VARCHAR}, #{caseCode,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{collecStateId,jdbcType=VARCHAR}, #{visitStateId,jdbcType=INTEGER}, #{batchId,jdbcType=VARCHAR}, 
+      #{caseDate,jdbcType=TIMESTAMP}, #{caseBackdate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
+      #{version,jdbcType=INTEGER}, #{cusNo,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
+      #{accountNo,jdbcType=VARCHAR}, #{caseAppNo,jdbcType=VARCHAR}, #{caseFileNo,jdbcType=VARCHAR}, 
+      #{caseName,jdbcType=VARCHAR}, #{caseSex,jdbcType=VARCHAR}, #{caseIsMarriage,jdbcType=VARCHAR}, 
+      #{caseBirthday,jdbcType=TIMESTAMP}, #{caseAge,jdbcType=INTEGER}, #{provinceId,jdbcType=VARCHAR}, 
+      #{provinceName,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, 
+      #{districtId,jdbcType=VARCHAR}, #{districtName,jdbcType=VARCHAR}, #{areaId,jdbcType=VARCHAR}, 
+      #{areaName,jdbcType=VARCHAR}, #{bankAccount,jdbcType=VARCHAR}, #{caseHouseId,jdbcType=VARCHAR}, 
+      #{caseCard,jdbcType=VARCHAR}, #{caseNum,jdbcType=VARCHAR}, #{caseNumId,jdbcType=VARCHAR}, 
+      #{casePosition,jdbcType=VARCHAR}, #{caseDepartment,jdbcType=VARCHAR}, #{casePositionLevel,jdbcType=VARCHAR}, 
+      #{accountName,jdbcType=VARCHAR}, #{lendInstitution,jdbcType=VARCHAR}, #{principal,jdbcType=DECIMAL}, 
+      #{surplusPrincipal,jdbcType=DECIMAL}, #{breach,jdbcType=DECIMAL}, #{caseMoney,jdbcType=DECIMAL}, 
+      #{caseLastMoney,jdbcType=DECIMAL}, #{caseLastDate,jdbcType=TIMESTAMP}, #{accountMoney,jdbcType=DECIMAL}, 
+      #{loanContract,jdbcType=VARCHAR}, #{loanMoney,jdbcType=DECIMAL}, #{loanRate,jdbcType=DECIMAL}, 
+      #{loanStartdate,jdbcType=TIMESTAMP}, #{loanEnddate,jdbcType=TIMESTAMP}, #{contractMoney,jdbcType=DECIMAL}, 
+      #{overdueMoney,jdbcType=DECIMAL}, #{overduePrincipal,jdbcType=DECIMAL}, #{overdueExpense,jdbcType=DECIMAL}, 
+      #{overdueAge,jdbcType=VARCHAR}, #{overduePenalty,jdbcType=DECIMAL}, #{overdueInterest,jdbcType=DECIMAL}, 
+      #{overdueDays,jdbcType=INTEGER}, #{overdueDate,jdbcType=TIMESTAMP}, #{overduePeriods,jdbcType=INTEGER}, 
+      #{onceOverduePeriods,jdbcType=INTEGER}, #{overdueLoan,jdbcType=DECIMAL}, #{overduePrincipalBalance,jdbcType=DECIMAL}, 
+      #{overdueCompound,jdbcType=DECIMAL}, #{socialSecurityNo,jdbcType=VARCHAR}, #{socialCardNo,jdbcType=VARCHAR}, 
+      #{agentRate,jdbcType=DECIMAL}, #{entrustRate,jdbcType=DECIMAL}, #{creditId,jdbcType=VARCHAR}, 
+      #{stayPeriods,jdbcType=INTEGER}, #{monthRepayment,jdbcType=DECIMAL}, #{lastRepayment,jdbcType=DECIMAL}, 
+      #{stayPrincipal,jdbcType=DECIMAL}, #{stayExpense,jdbcType=DECIMAL}, #{stayInterest,jdbcType=DECIMAL}, 
+      #{bill,jdbcType=INTEGER}, #{repaymentPeriods,jdbcType=INTEGER}, #{commodity,jdbcType=VARCHAR}, 
+      #{companyName,jdbcType=VARCHAR}, #{companyPhone,jdbcType=VARCHAR}, #{companyAddress,jdbcType=VARCHAR}, 
+      #{companyZipcode,jdbcType=VARCHAR}, #{mobile1,jdbcType=VARCHAR}, #{mobile2,jdbcType=VARCHAR}, 
+      #{familyPhone,jdbcType=VARCHAR}, #{familyAddress,jdbcType=VARCHAR}, #{familyZipcode,jdbcType=VARCHAR}, 
+      #{domicile,jdbcType=VARCHAR}, #{markId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{isVerify,jdbcType=VARCHAR}, #{verifyDate,jdbcType=TIMESTAMP}, #{repaymentType,jdbcType=VARCHAR}, 
+      #{protocolNo,jdbcType=VARCHAR}, #{loanArea,jdbcType=VARCHAR}, #{actualLoanMoney,jdbcType=DECIMAL}, 
+      #{interestMoney,jdbcType=DECIMAL}, #{penaltyReference,jdbcType=VARCHAR}, #{compoundInterestReference,jdbcType=VARCHAR}, 
+      #{quotaNo,jdbcType=VARCHAR}, #{quotaManager1,jdbcType=VARCHAR}, #{quotaManager2,jdbcType=VARCHAR}, 
+      #{managerPhone,jdbcType=VARCHAR}, #{collateralNo,jdbcType=VARCHAR}, #{collateralId,jdbcType=VARCHAR}, 
+      #{collateralName,jdbcType=VARCHAR}, #{collateralAddress,jdbcType=VARCHAR}, #{collateralEvalua,jdbcType=VARCHAR}, 
+      #{repayDate,jdbcType=INTEGER}, #{totalConstruc,jdbcType=VARCHAR}, #{regione,jdbcType=VARCHAR}, 
+      #{subCenter,jdbcType=VARCHAR}, #{salesDep,jdbcType=VARCHAR}, #{consultFee,jdbcType=DECIMAL}, 
+      #{auditFee,jdbcType=DECIMAL}, #{serviceFee,jdbcType=DECIMAL}, #{adviserFee,jdbcType=DECIMAL}, 
+      #{feeTotal,jdbcType=DECIMAL}, #{initialRepay,jdbcType=TIMESTAMP}, #{duePeriods,jdbcType=INTEGER}, 
+      #{penaltyDays,jdbcType=DECIMAL}, #{debitBankCode,jdbcType=VARCHAR}, #{debitBankName,jdbcType=VARCHAR}, 
+      #{debitAccount,jdbcType=VARCHAR}, #{reliefPolicy,jdbcType=VARCHAR}, #{caseAssignedId,jdbcType=VARCHAR}, 
+      #{caseAssignId,jdbcType=VARCHAR}, #{caseAssignName,jdbcType=VARCHAR}, #{caseAssignTime,jdbcType=TIMESTAMP}, 
+      #{createEmpId,jdbcType=VARCHAR}, #{modifyEmpId,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, #{orgId,jdbcType=VARCHAR}, 
+      #{orgName,jdbcType=VARCHAR}, #{nextFollowTime,jdbcType=TIMESTAMP}, #{nextFollowState,jdbcType=VARCHAR}, 
+      #{lastPhoneTime,jdbcType=TIMESTAMP}, #{isUpdate,jdbcType=CHAR}, #{handle,jdbcType=VARCHAR}, 
+      #{inDerate,jdbcType=DECIMAL}, #{outDerate,jdbcType=DECIMAL}, #{color,jdbcType=INTEGER}, 
+      #{caseWarn,jdbcType=VARCHAR}, #{startCardDate,jdbcType=TIMESTAMP}, #{stopCardDate,jdbcType=TIMESTAMP}, 
+      #{creditLimit,jdbcType=DECIMAL}, #{policyExpire,jdbcType=TIMESTAMP}, #{collecType,jdbcType=VARCHAR}, 
+      #{lateFee,jdbcType=DECIMAL}, #{domicileZipcode,jdbcType=VARCHAR}, #{billAddress,jdbcType=VARCHAR}, 
+      #{billZipcode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, 
+      #{repaymentTerm,jdbcType=VARCHAR}, #{oldCollecRecord,jdbcType=LONGVARCHAR}, #{remainHistory,jdbcType=LONGVARCHAR}, 
+      #{remark1,jdbcType=LONGVARCHAR}, #{remark2,jdbcType=LONGVARCHAR}, #{collecRemark,jdbcType=LONGVARCHAR}, 
+      #{cusIntroduc,jdbcType=LONGVARCHAR}, #{hisRemark,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.bean.CaseInfo">
+    
+    update case_info
+    set case_code = #{caseCode,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      collec_state_id = #{collecStateId,jdbcType=VARCHAR},
+      visit_state_id = #{visitStateId,jdbcType=INTEGER},
+      batch_id = #{batchId,jdbcType=VARCHAR},
+      case_date = #{caseDate,jdbcType=TIMESTAMP},
+      case_backdate = #{caseBackdate,jdbcType=TIMESTAMP},
+      end_date = #{endDate,jdbcType=TIMESTAMP},
+      version = #{version,jdbcType=INTEGER},
+      cus_no = #{cusNo,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=VARCHAR},
+      account_no = #{accountNo,jdbcType=VARCHAR},
+      case_app_no = #{caseAppNo,jdbcType=VARCHAR},
+      case_file_no = #{caseFileNo,jdbcType=VARCHAR},
+      case_name = #{caseName,jdbcType=VARCHAR},
+      case_sex = #{caseSex,jdbcType=VARCHAR},
+      case_is_marriage = #{caseIsMarriage,jdbcType=VARCHAR},
+      case_birthday = #{caseBirthday,jdbcType=TIMESTAMP},
+      case_age = #{caseAge,jdbcType=INTEGER},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      province_name = #{provinceName,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      city_name = #{cityName,jdbcType=VARCHAR},
+      district_id = #{districtId,jdbcType=VARCHAR},
+      district_name = #{districtName,jdbcType=VARCHAR},
+      area_id = #{areaId,jdbcType=VARCHAR},
+      area_name = #{areaName,jdbcType=VARCHAR},
+      bank_account = #{bankAccount,jdbcType=VARCHAR},
+      case_house_id = #{caseHouseId,jdbcType=VARCHAR},
+      case_card = #{caseCard,jdbcType=VARCHAR},
+      case_num = #{caseNum,jdbcType=VARCHAR},
+      case_num_id = #{caseNumId,jdbcType=VARCHAR},
+      case_position = #{casePosition,jdbcType=VARCHAR},
+      case_department = #{caseDepartment,jdbcType=VARCHAR},
+      case_position_level = #{casePositionLevel,jdbcType=VARCHAR},
+      account_name = #{accountName,jdbcType=VARCHAR},
+      lend_institution = #{lendInstitution,jdbcType=VARCHAR},
+      principal = #{principal,jdbcType=DECIMAL},
+      surplus_principal = #{surplusPrincipal,jdbcType=DECIMAL},
+      breach = #{breach,jdbcType=DECIMAL},
+      case_money = #{caseMoney,jdbcType=DECIMAL},
+      case_last_money = #{caseLastMoney,jdbcType=DECIMAL},
+      case_last_date = #{caseLastDate,jdbcType=TIMESTAMP},
+      account_money = #{accountMoney,jdbcType=DECIMAL},
+      loan_contract = #{loanContract,jdbcType=VARCHAR},
+      loan_money = #{loanMoney,jdbcType=DECIMAL},
+      loan_rate = #{loanRate,jdbcType=DECIMAL},
+      loan_startdate = #{loanStartdate,jdbcType=TIMESTAMP},
+      loan_enddate = #{loanEnddate,jdbcType=TIMESTAMP},
+      contract_money = #{contractMoney,jdbcType=DECIMAL},
+      overdue_money = #{overdueMoney,jdbcType=DECIMAL},
+      overdue_principal = #{overduePrincipal,jdbcType=DECIMAL},
+      overdue_expense = #{overdueExpense,jdbcType=DECIMAL},
+      overdue_age = #{overdueAge,jdbcType=VARCHAR},
+      overdue_penalty = #{overduePenalty,jdbcType=DECIMAL},
+      overdue_interest = #{overdueInterest,jdbcType=DECIMAL},
+      overdue_days = #{overdueDays,jdbcType=INTEGER},
+      overdue_date = #{overdueDate,jdbcType=TIMESTAMP},
+      overdue_periods = #{overduePeriods,jdbcType=INTEGER},
+      once_overdue_periods = #{onceOverduePeriods,jdbcType=INTEGER},
+      overdue_loan = #{overdueLoan,jdbcType=DECIMAL},
+      overdue_principal_balance = #{overduePrincipalBalance,jdbcType=DECIMAL},
+      overdue_compound = #{overdueCompound,jdbcType=DECIMAL},
+      social_security_no = #{socialSecurityNo,jdbcType=VARCHAR},
+      social_card_no = #{socialCardNo,jdbcType=VARCHAR},
+      agent_rate = #{agentRate,jdbcType=DECIMAL},
+      entrust_rate = #{entrustRate,jdbcType=DECIMAL},
+      credit_id = #{creditId,jdbcType=VARCHAR},
+      stay_periods = #{stayPeriods,jdbcType=INTEGER},
+      month_repayment = #{monthRepayment,jdbcType=DECIMAL},
+      last_repayment = #{lastRepayment,jdbcType=DECIMAL},
+      stay_principal = #{stayPrincipal,jdbcType=DECIMAL},
+      stay_expense = #{stayExpense,jdbcType=DECIMAL},
+      stay_interest = #{stayInterest,jdbcType=DECIMAL},
+      bill = #{bill,jdbcType=INTEGER},
+      repayment_periods = #{repaymentPeriods,jdbcType=INTEGER},
+      commodity = #{commodity,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_phone = #{companyPhone,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      company_zipcode = #{companyZipcode,jdbcType=VARCHAR},
+      mobile1 = #{mobile1,jdbcType=VARCHAR},
+      mobile2 = #{mobile2,jdbcType=VARCHAR},
+      family_phone = #{familyPhone,jdbcType=VARCHAR},
+      family_address = #{familyAddress,jdbcType=VARCHAR},
+      family_zipcode = #{familyZipcode,jdbcType=VARCHAR},
+      domicile = #{domicile,jdbcType=VARCHAR},
+      mark_id = #{markId,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      is_verify = #{isVerify,jdbcType=VARCHAR},
+      verify_date = #{verifyDate,jdbcType=TIMESTAMP},
+      repayment_type = #{repaymentType,jdbcType=VARCHAR},
+      protocol_no = #{protocolNo,jdbcType=VARCHAR},
+      loan_area = #{loanArea,jdbcType=VARCHAR},
+      actual_loan_money = #{actualLoanMoney,jdbcType=DECIMAL},
+      interest_money = #{interestMoney,jdbcType=DECIMAL},
+      penalty_reference = #{penaltyReference,jdbcType=VARCHAR},
+      compound_interest_reference = #{compoundInterestReference,jdbcType=VARCHAR},
+      quota_no = #{quotaNo,jdbcType=VARCHAR},
+      quota_manager1 = #{quotaManager1,jdbcType=VARCHAR},
+      quota_manager2 = #{quotaManager2,jdbcType=VARCHAR},
+      manager_phone = #{managerPhone,jdbcType=VARCHAR},
+      collateral_no = #{collateralNo,jdbcType=VARCHAR},
+      collateral_id = #{collateralId,jdbcType=VARCHAR},
+      collateral_name = #{collateralName,jdbcType=VARCHAR},
+      collateral_address = #{collateralAddress,jdbcType=VARCHAR},
+      collateral_evalua = #{collateralEvalua,jdbcType=VARCHAR},
+      repay_date = #{repayDate,jdbcType=INTEGER},
+      total_construc = #{totalConstruc,jdbcType=VARCHAR},
+      regione = #{regione,jdbcType=VARCHAR},
+      sub_center = #{subCenter,jdbcType=VARCHAR},
+      sales_dep = #{salesDep,jdbcType=VARCHAR},
+      consult_fee = #{consultFee,jdbcType=DECIMAL},
+      audit_fee = #{auditFee,jdbcType=DECIMAL},
+      service_fee = #{serviceFee,jdbcType=DECIMAL},
+      adviser_fee = #{adviserFee,jdbcType=DECIMAL},
+      fee_total = #{feeTotal,jdbcType=DECIMAL},
+      initial_repay = #{initialRepay,jdbcType=TIMESTAMP},
+      due_periods = #{duePeriods,jdbcType=INTEGER},
+      penalty_days = #{penaltyDays,jdbcType=DECIMAL},
+      debit_bank_code = #{debitBankCode,jdbcType=VARCHAR},
+      debit_bank_name = #{debitBankName,jdbcType=VARCHAR},
+      debit_account = #{debitAccount,jdbcType=VARCHAR},
+      relief_policy = #{reliefPolicy,jdbcType=VARCHAR},
+      case_assigned_id = #{caseAssignedId,jdbcType=VARCHAR},
+      case_assign_id = #{caseAssignId,jdbcType=VARCHAR},
+      case_assign_name = #{caseAssignName,jdbcType=VARCHAR},
+      case_assign_time = #{caseAssignTime,jdbcType=TIMESTAMP},
+      create_emp_id = #{createEmpId,jdbcType=VARCHAR},
+      modify_emp_id = #{modifyEmpId,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT},
+      org_id = #{orgId,jdbcType=VARCHAR},
+      org_name = #{orgName,jdbcType=VARCHAR},
+      next_follow_time = #{nextFollowTime,jdbcType=TIMESTAMP},
+      next_follow_state = #{nextFollowState,jdbcType=VARCHAR},
+      last_phone_time = #{lastPhoneTime,jdbcType=TIMESTAMP},
+      is_update = #{isUpdate,jdbcType=CHAR},
+      handle = #{handle,jdbcType=VARCHAR},
+      in_derate = #{inDerate,jdbcType=DECIMAL},
+      out_derate = #{outDerate,jdbcType=DECIMAL},
+      color = #{color,jdbcType=INTEGER},
+      case_warn = #{caseWarn,jdbcType=VARCHAR},
+      start_card_date = #{startCardDate,jdbcType=TIMESTAMP},
+      stop_card_date = #{stopCardDate,jdbcType=TIMESTAMP},
+      credit_limit = #{creditLimit,jdbcType=DECIMAL},
+      policy_expire = #{policyExpire,jdbcType=TIMESTAMP},
+      collec_type = #{collecType,jdbcType=VARCHAR},
+      late_fee = #{lateFee,jdbcType=DECIMAL},
+      domicile_zipcode = #{domicileZipcode,jdbcType=VARCHAR},
+      bill_address = #{billAddress,jdbcType=VARCHAR},
+      bill_zipcode = #{billZipcode,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      repayment_term = #{repaymentTerm,jdbcType=VARCHAR},
+      old_collec_record = #{oldCollecRecord,jdbcType=LONGVARCHAR},
+      remain_history = #{remainHistory,jdbcType=LONGVARCHAR},
+      remark1 = #{remark1,jdbcType=LONGVARCHAR},
+      remark2 = #{remark2,jdbcType=LONGVARCHAR},
+      collec_remark = #{collecRemark,jdbcType=LONGVARCHAR},
+      cus_introduc = #{cusIntroduc,jdbcType=LONGVARCHAR},
+      his_remark = #{hisRemark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    
+    select id, case_code, state, collec_state_id, visit_state_id, batch_id, case_date, 
+    case_backdate, end_date, version, cus_no, userId, account_no, case_app_no, case_file_no, 
+    case_name, case_sex, case_is_marriage, case_birthday, case_age, province_id, province_name, 
+    city_id, city_name, district_id, district_name, area_id, area_name, bank_account, 
+    case_house_id, case_card, case_num, case_num_id, case_position, case_department, 
+    case_position_level, account_name, lend_institution, principal, surplus_principal, 
+    breach, case_money, case_last_money, case_last_date, account_money, loan_contract, 
+    loan_money, loan_rate, loan_startdate, loan_enddate, contract_money, overdue_money, 
+    overdue_principal, overdue_expense, overdue_age, overdue_penalty, overdue_interest, 
+    overdue_days, overdue_date, overdue_periods, once_overdue_periods, overdue_loan, 
+    overdue_principal_balance, overdue_compound, social_security_no, social_card_no, 
+    agent_rate, entrust_rate, credit_id, stay_periods, month_repayment, last_repayment, 
+    stay_principal, stay_expense, stay_interest, bill, repayment_periods, commodity, 
+    company_name, company_phone, company_address, company_zipcode, mobile1, mobile2, 
+    family_phone, family_address, family_zipcode, domicile, mark_id, user_name, is_verify, 
+    verify_date, repayment_type, protocol_no, loan_area, actual_loan_money, interest_money, 
+    penalty_reference, compound_interest_reference, quota_no, quota_manager1, quota_manager2, 
+    manager_phone, collateral_no, collateral_id, collateral_name, collateral_address, 
+    collateral_evalua, repay_date, total_construc, regione, sub_center, sales_dep, consult_fee, 
+    audit_fee, service_fee, adviser_fee, fee_total, initial_repay, due_periods, penalty_days, 
+    debit_bank_code, debit_bank_name, debit_account, relief_policy, case_assigned_id, 
+    case_assign_id, case_assign_name, case_assign_time, create_emp_id, modify_emp_id, 
+    modify_time, create_time, status, org_id, org_name, next_follow_time, next_follow_state, 
+    last_phone_time, is_update, handle, in_derate, out_derate, color, case_warn, start_card_date, 
+    stop_card_date, credit_limit, policy_expire, collec_type, late_fee, domicile_zipcode, 
+    bill_address, bill_zipcode, email, currency, repayment_term, old_collec_record, remain_history, 
+    remark1, remark2, collec_remark, cus_introduc, his_remark
+    from case_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+   
+    select id, case_code, state, collec_state_id, visit_state_id, batch_id, case_date, 
+    case_backdate, end_date, version, cus_no, userId, account_no, case_app_no, case_file_no, 
+    case_name, case_sex, case_is_marriage, case_birthday, case_age, province_id, province_name, 
+    city_id, city_name, district_id, district_name, area_id, area_name, bank_account, 
+    case_house_id, case_card, case_num, case_num_id, case_position, case_department, 
+    case_position_level, account_name, lend_institution, principal, surplus_principal, 
+    breach, case_money, case_last_money, case_last_date, account_money, loan_contract, 
+    loan_money, loan_rate, loan_startdate, loan_enddate, contract_money, overdue_money, 
+    overdue_principal, overdue_expense, overdue_age, overdue_penalty, overdue_interest, 
+    overdue_days, overdue_date, overdue_periods, once_overdue_periods, overdue_loan, 
+    overdue_principal_balance, overdue_compound, social_security_no, social_card_no, 
+    agent_rate, entrust_rate, credit_id, stay_periods, month_repayment, last_repayment, 
+    stay_principal, stay_expense, stay_interest, bill, repayment_periods, commodity, 
+    company_name, company_phone, company_address, company_zipcode, mobile1, mobile2, 
+    family_phone, family_address, family_zipcode, domicile, mark_id, user_name, is_verify, 
+    verify_date, repayment_type, protocol_no, loan_area, actual_loan_money, interest_money, 
+    penalty_reference, compound_interest_reference, quota_no, quota_manager1, quota_manager2, 
+    manager_phone, collateral_no, collateral_id, collateral_name, collateral_address, 
+    collateral_evalua, repay_date, total_construc, regione, sub_center, sales_dep, consult_fee, 
+    audit_fee, service_fee, adviser_fee, fee_total, initial_repay, due_periods, penalty_days, 
+    debit_bank_code, debit_bank_name, debit_account, relief_policy, case_assigned_id, 
+    case_assign_id, case_assign_name, case_assign_time, create_emp_id, modify_emp_id, 
+    modify_time, create_time, status, org_id, org_name, next_follow_time, next_follow_state, 
+    last_phone_time, is_update, handle, in_derate, out_derate, color, case_warn, start_card_date, 
+    stop_card_date, credit_limit, policy_expire, collec_type, late_fee, domicile_zipcode, 
+    bill_address, bill_zipcode, email, currency, repayment_term, old_collec_record, remain_history, 
+    remark1, remark2, collec_remark, cus_introduc, his_remark
+    from case_info
+  </select>
+</mapper>

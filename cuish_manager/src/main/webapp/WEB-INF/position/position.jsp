@@ -126,22 +126,12 @@ function deletePos(id){
 	}
 }
 		
-		/*  function modifyWindow(id){
-			 var row = $('.ta').datagrid("getSelected");
-	            if (row){
-	            	alert(row.id);
-	                $('#w').window('open').window('center').window('setTitle','Edit User');
-	                $('#fm').form('load',row);
-	                alert(row.id);
-	                url = 'position/modifyPosition.do?id='+row.id; 
-	            }
-		 }  */
 		 function modifyWindow(id){
 			 var row = $('#ta').datagrid("getSelected");
 			 var id = row.id+"";
-			 alert(id);
+			
 			 $.post("position/modifyPosition.do",{id:id},function(data){
-				 alert(id);
+				
 				 $('#m').dialog('open').dialog('center').dialog('setTitle','修改职位');
 				 $('#fmm').form('load',data);
 			 })
