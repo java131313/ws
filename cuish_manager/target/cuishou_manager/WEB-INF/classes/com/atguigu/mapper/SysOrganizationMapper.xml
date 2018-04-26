@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.SysOrganizationMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.SysOrganization">
+    
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="post_code" jdbcType="VARCHAR" property="post_code" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="order_no" jdbcType="INTEGER" property="orderNo" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="principal_id" jdbcType="VARCHAR" property="principalId" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+  </resultMap>
+  
+  
+  
+  <select id="queryPageOrg" resultType="com.atguigu.bean.SysOrganization">
+        
+    select id, create_time, modify_time, version, status, name, parent_id _parentId, address, phone, 
+    post_code, fax, type, order_no, code, principal_id, path
+    from sys_organization
+        limit #{start}, #{size}
+    </select>
+  
+  <select id="queryPageCount" resultType="int">
+        select
+            count(*)
+        from sys_organization
+    </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="int">
+   
+    delete from sys_organization
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.SysOrganization">
+   
+    insert into sys_organization (
+    	id,parent_id,address,type,phone, post_code,fax,order_no,name,principal_id
+    ) values(
+    #{id,jdbcType=INTEGER},
+    	#{parentId,jdbcType=INTEGER},
+    	#{address,jdbcType=VARCHAR},#{type,jdbcType=TINYINT},
+    	#{phone,jdbcType=VARCHAR},
+    	#{post_code},
+    	#{fax,jdbcType=VARCHAR},#{orderNo,jdbcType=INTEGER},
+    	#{name},#{principalId,jdbcType=VARCHAR}
+    )
+      
+  </insert>
+  <update id="edit_sys_organ" parameterType="com.atguigu.bean.SysOrganization">
+  update sys_organization
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}, 
+      version = #{version,jdbcType=INTEGER},
+    status = #{status,jdbcType=INTEGER}, 
+      name = #{name,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      post_code = #{post_code,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      order_no = #{orderNo,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR}, 
+      principal_id = #{principalId,jdbcType=VARCHAR},
+     path = #{path,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="int">
+    
+    update sys_organization
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}, 
+      version = #{version,jdbcType=INTEGER},
+    status = #{status,jdbcType=INTEGER}, 
+      name = #{name,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      post_code = #{post_code,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      order_no = #{orderNo,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR}, 
+      principal_id = #{principalId,jdbcType=VARCHAR},
+     path = #{path,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="int" resultMap="BaseResultMap">
+    
+    select id, create_time, modify_time, version, status, name, parent_id, address, phone, 
+    post_code, fax, type, order_no, code, principal_id, path
+    from sys_organization
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    
+    select id, create_time, modify_time, version, status, name, parent_id , address, phone, 
+    post_code, fax, type, order_no, code, principal_id, path
+    from sys_organization
+  </select>
+  
+</mapper>

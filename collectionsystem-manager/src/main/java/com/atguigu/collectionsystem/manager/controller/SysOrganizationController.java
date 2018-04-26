@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -72,8 +74,10 @@ public class SysOrganizationController {
 	
 	@ResponseBody
 	@RequestMapping("/addOrgn")
-	public String addOrgn(SysOrganization orgn) {
-		
+	public String addOrgn( SysOrganization orgn, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			
+		}
 		Date date= new Date();
 		orgn.setModifyTime(date);
 		int i=sysOrganizationService.insertOrgn(orgn);

@@ -54,6 +54,8 @@
        rownumbers="true" fitColumns="true" singleSelect="true"  closed="true" buttons="#dlg-buttons">
         <div class="ftitle" align="center"><h2>机构信息</h2>
         <form id="fm" method="post" novalidate>
+        
+            <input type="hidden" name="id"  >
             <div class="fitem" style="margin:10px";>
                 <label>机构名称:</label>
                 <input name="name" class="easyui-validatebox" >

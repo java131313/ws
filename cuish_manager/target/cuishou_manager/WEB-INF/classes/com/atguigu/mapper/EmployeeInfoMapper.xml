@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.EmployeeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.EmployeeInfo">
+    
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="personal_id" jdbcType="VARCHAR" property="personalId" />
+    <result column="sex" jdbcType="BIT" property="sex" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="married" jdbcType="BIT" property="married" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="join_time" jdbcType="DATE" property="joinTime" />
+    <result column="position_id" jdbcType="VARCHAR" property="positionId" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="cc_login" jdbcType="VARCHAR" property="ccLogin" />
+    <result column="cc_pwd" jdbcType="VARCHAR" property="ccPwd" />
+    <result column="cc_server" jdbcType="VARCHAR" property="ccServer" />
+    <result column="cc_phone" jdbcType="VARCHAR" property="ccPhone" />
+    <result column="contact_mode" jdbcType="VARCHAR" property="contactMode" />
+    <result column="attach_org_id" jdbcType="LONGVARCHAR" property="attachOrgId" />
+    <result column="attach_entrust_id" jdbcType="LONGVARCHAR" property="attachEntrustId" />
+  </resultMap>
+  <select id="queryName" resultMap="BaseResultMap">
+  		select * from employee_info  
+		<where>
+			<if test="queryContent != null">
+			and user_name like concat('%', #{queryContent}, '%')
+			</if>
+		</where>
+  		
+  	</select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    
+    delete from employee_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.EmployeeInfo">
+    
+    insert into employee_info (id, salt, create_time, 
+      modify_time, version, number, 
+      status, user_name, personal_id, 
+      sex, birthday, nation, 
+      password, login_name, married, 
+      province, city, email, 
+      join_time, position_id, org_id, 
+      cc_login, cc_pwd, cc_server, 
+      cc_phone, contact_mode, attach_org_id, 
+      attach_entrust_id)
+    values (#{id,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{version,jdbcType=INTEGER}, #{number,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{personalId,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=BIT}, #{birthday,jdbcType=TIMESTAMP}, #{nation,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, #{married,jdbcType=BIT}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{joinTime,jdbcType=DATE}, #{positionId,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{ccLogin,jdbcType=VARCHAR}, #{ccPwd,jdbcType=VARCHAR}, #{ccServer,jdbcType=VARCHAR}, 
+      #{ccPhone,jdbcType=VARCHAR}, #{contactMode,jdbcType=VARCHAR}, #{attachOrgId,jdbcType=LONGVARCHAR}, 
+      #{attachEntrustId,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.bean.EmployeeInfo">
+    
+    update employee_info
+    set salt = #{salt,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}, 
+      version = #{version,jdbcType=INTEGER},
+      number = #{number,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      user_name = #{userName,jdbcType=VARCHAR},
+      personal_id = #{personalId,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIT},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      nation = #{nation,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      login_name = #{loginName,jdbcType=VARCHAR},
+      married = #{married,jdbcType=BIT},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      join_time = #{joinTime,jdbcType=DATE},
+      position_id = #{positionId,jdbcType=VARCHAR},
+      org_id = #{orgId,jdbcType=VARCHAR},
+      cc_login = #{ccLogin,jdbcType=VARCHAR},
+      cc_pwd = #{ccPwd,jdbcType=VARCHAR},
+      cc_server = #{ccServer,jdbcType=VARCHAR},
+      cc_phone = #{ccPhone,jdbcType=VARCHAR},
+      contact_mode = #{contactMode,jdbcType=VARCHAR},
+      attach_org_id = #{attachOrgId,jdbcType=LONGVARCHAR},
+      attach_entrust_id = #{attachEntrustId,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+   
+    select id, salt, create_time, modify_time, version, number, status, user_name, personal_id, 
+    sex, birthday, nation, password, login_name, married, province, city, email, join_time, 
+    position_id, org_id, cc_login, cc_pwd, cc_server, cc_phone, contact_mode, attach_org_id, 
+    attach_entrust_id
+    from employee_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    
+    select id, salt, create_time, modify_time, version, number, status, user_name, personal_id, 
+    sex, birthday, nation, password, login_name, married, province, city, email, join_time, 
+    position_id, org_id, cc_login, cc_pwd, cc_server, cc_phone, contact_mode, attach_org_id, 
+    attach_entrust_id
+    from employee_info
+  </select>
+</mapper>

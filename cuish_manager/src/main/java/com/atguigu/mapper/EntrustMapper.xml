@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.EntrustMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.Entrust">
+    
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="cooperate_date" jdbcType="TIMESTAMP" property="cooperateDate" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="service_hotline" jdbcType="VARCHAR" property="serviceHotline" />
+    <result column="abutment_person" jdbcType="VARCHAR" property="abutmentPerson" />
+    <result column="abutment_email" jdbcType="VARCHAR" property="abutmentEmail" />
+    <result column="abutment_phone" jdbcType="VARCHAR" property="abutmentPhone" />
+    <result column="case_frequency" jdbcType="CHAR" property="caseFrequency" />
+    <result column="effec_repay_period" jdbcType="VARCHAR" property="effecRepayPeriod" />
+    <result column="collec_nominal" jdbcType="VARCHAR" property="collecNominal" />
+    <result column="collec_term" jdbcType="VARCHAR" property="collecTerm" />
+    <result column="stay_require" jdbcType="VARCHAR" property="stayRequire" />
+    <result column="back_require" jdbcType="VARCHAR" property="backRequire" />
+    <result column="report_period" jdbcType="CHAR" property="reportPeriod" />
+    <result column="settlement_period" jdbcType="CHAR" property="settlementPeriod" />
+    <result column="repayment_method" jdbcType="VARCHAR" property="repaymentMethod" />
+    <result column="discount_reduction" jdbcType="VARCHAR" property="discountReduction" />
+    <result column="period_repayment_require" jdbcType="VARCHAR" property="periodRepaymentRequire" />
+    <result column="cancel_account" jdbcType="VARCHAR" property="cancelAccount" />
+    <result column="resource_retrieve_require" jdbcType="VARCHAR" property="resourceRetrieveRequire" />
+    <result column="collec_submit_require" jdbcType="VARCHAR" property="collecSubmitRequire" />
+    <result column="complaint_handle_require" jdbcType="VARCHAR" property="complaintHandleRequire" />
+    <result column="tape_submit_require" jdbcType="VARCHAR" property="tapeSubmitRequire" />
+    <result column="data_destruc_require" jdbcType="VARCHAR" property="dataDestrucRequire" />
+    <result column="letter_recovery_require" jdbcType="VARCHAR" property="letterRecoveryRequire" />
+    <result column="report_require" jdbcType="VARCHAR" property="reportRequire" />
+    <result column="cus_special_instruc" jdbcType="VARCHAR" property="cusSpecialInstruc" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="contract_name" jdbcType="VARCHAR" property="contractName" />
+    <result column="create_emp_id" jdbcType="VARCHAR" property="createEmpId" />
+    <result column="create_emp_name" jdbcType="VARCHAR" property="createEmpName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="case_type_id" jdbcType="LONGVARCHAR" property="caseTypeId" />
+    <result column="product_name" jdbcType="LONGVARCHAR" property="productName" />
+    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+   
+    delete from entrust
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.Entrust">
+    
+    insert into entrust (id, name, code, 
+      cooperate_date, address, service_hotline, 
+      abutment_person, abutment_email, abutment_phone, 
+      case_frequency, effec_repay_period, collec_nominal, 
+      collec_term, stay_require, back_require, 
+      report_period, settlement_period, repayment_method, 
+      discount_reduction, period_repayment_require, 
+      cancel_account, resource_retrieve_require, 
+      collec_submit_require, complaint_handle_require, 
+      tape_submit_require, data_destruc_require, 
+      letter_recovery_require, report_require, cus_special_instruc, 
+      state, modify_time, contract_name, 
+      create_emp_id, create_emp_name, create_time, 
+      case_type_id, product_name, remark
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{cooperateDate,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, #{serviceHotline,jdbcType=VARCHAR}, 
+      #{abutmentPerson,jdbcType=VARCHAR}, #{abutmentEmail,jdbcType=VARCHAR}, #{abutmentPhone,jdbcType=VARCHAR}, 
+      #{caseFrequency,jdbcType=CHAR}, #{effecRepayPeriod,jdbcType=VARCHAR}, #{collecNominal,jdbcType=VARCHAR}, 
+      #{collecTerm,jdbcType=VARCHAR}, #{stayRequire,jdbcType=VARCHAR}, #{backRequire,jdbcType=VARCHAR}, 
+      #{reportPeriod,jdbcType=CHAR}, #{settlementPeriod,jdbcType=CHAR}, #{repaymentMethod,jdbcType=VARCHAR}, 
+      #{discountReduction,jdbcType=VARCHAR}, #{periodRepaymentRequire,jdbcType=VARCHAR}, 
+      #{cancelAccount,jdbcType=VARCHAR}, #{resourceRetrieveRequire,jdbcType=VARCHAR}, 
+      #{collecSubmitRequire,jdbcType=VARCHAR}, #{complaintHandleRequire,jdbcType=VARCHAR}, 
+      #{tapeSubmitRequire,jdbcType=VARCHAR}, #{dataDestrucRequire,jdbcType=VARCHAR}, 
+      #{letterRecoveryRequire,jdbcType=VARCHAR}, #{reportRequire,jdbcType=VARCHAR}, #{cusSpecialInstruc,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{modifyTime,jdbcType=TIMESTAMP}, #{contractName,jdbcType=VARCHAR}, 
+      #{createEmpId,jdbcType=VARCHAR}, #{createEmpName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{caseTypeId,jdbcType=LONGVARCHAR}, #{productName,jdbcType=LONGVARCHAR}, #{remark,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.bean.Entrust">
+    
+    update entrust
+    set name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      cooperate_date = #{cooperateDate,jdbcType=TIMESTAMP},
+      address = #{address,jdbcType=VARCHAR},
+      service_hotline = #{serviceHotline,jdbcType=VARCHAR},
+      abutment_person = #{abutmentPerson,jdbcType=VARCHAR},
+      abutment_email = #{abutmentEmail,jdbcType=VARCHAR},
+      abutment_phone = #{abutmentPhone,jdbcType=VARCHAR},
+      case_frequency = #{caseFrequency,jdbcType=CHAR},
+      effec_repay_period = #{effecRepayPeriod,jdbcType=VARCHAR},
+      collec_nominal = #{collecNominal,jdbcType=VARCHAR},
+      collec_term = #{collecTerm,jdbcType=VARCHAR},
+      stay_require = #{stayRequire,jdbcType=VARCHAR},
+      back_require = #{backRequire,jdbcType=VARCHAR},
+      report_period = #{reportPeriod,jdbcType=CHAR},
+      settlement_period = #{settlementPeriod,jdbcType=CHAR},
+      repayment_method = #{repaymentMethod,jdbcType=VARCHAR},
+      discount_reduction = #{discountReduction,jdbcType=VARCHAR},
+      period_repayment_require = #{periodRepaymentRequire,jdbcType=VARCHAR},
+      cancel_account = #{cancelAccount,jdbcType=VARCHAR},
+      resource_retrieve_require = #{resourceRetrieveRequire,jdbcType=VARCHAR},
+      collec_submit_require = #{collecSubmitRequire,jdbcType=VARCHAR},
+      complaint_handle_require = #{complaintHandleRequire,jdbcType=VARCHAR},
+      tape_submit_require = #{tapeSubmitRequire,jdbcType=VARCHAR},
+      data_destruc_require = #{dataDestrucRequire,jdbcType=VARCHAR},
+      letter_recovery_require = #{letterRecoveryRequire,jdbcType=VARCHAR},
+      report_require = #{reportRequire,jdbcType=VARCHAR},
+      cus_special_instruc = #{cusSpecialInstruc,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      contract_name = #{contractName,jdbcType=VARCHAR},
+      create_emp_id = #{createEmpId,jdbcType=VARCHAR},
+      create_emp_name = #{createEmpName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      case_type_id = #{caseTypeId,jdbcType=LONGVARCHAR},
+      product_name = #{productName,jdbcType=LONGVARCHAR},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    
+    select id, name, code, cooperate_date, address, service_hotline, abutment_person, 
+    abutment_email, abutment_phone, case_frequency, effec_repay_period, collec_nominal, 
+    collec_term, stay_require, back_require, report_period, settlement_period, repayment_method, 
+    discount_reduction, period_repayment_require, cancel_account, resource_retrieve_require, 
+    collec_submit_require, complaint_handle_require, tape_submit_require, data_destruc_require, 
+    letter_recovery_require, report_require, cus_special_instruc, state, modify_time, 
+    contract_name, create_emp_id, create_emp_name, create_time, case_type_id, product_name, 
+    remark
+    from entrust
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+   
+    select id, name, code, cooperate_date, address, service_hotline, abutment_person, 
+    abutment_email, abutment_phone, case_frequency, effec_repay_period, collec_nominal, 
+    collec_term, stay_require, back_require, report_period, settlement_period, repayment_method, 
+    discount_reduction, period_repayment_require, cancel_account, resource_retrieve_require, 
+    collec_submit_require, complaint_handle_require, tape_submit_require, data_destruc_require, 
+    letter_recovery_require, report_require, cus_special_instruc, state, modify_time, 
+    contract_name, create_emp_id, create_emp_name, create_time, case_type_id, product_name, 
+    remark
+    from entrust
+  </select>
+</mapper>

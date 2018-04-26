@@ -1,5 +1,5 @@
-GitRepositoriesView.GitDirectories=/Users/kxy/Documents/workspace-sts-3.9.3.RELEASE/atguigu-parent/.git\:
-GitRepositoriesView.GitDirectories.relative=atguigu-parent/.git\:
+GitRepositoriesView.GitDirectories=/Users/kxy/Desktop/ws/.git\:/Users/kxy/Desktop/ws/atguigu-parent/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:atguigu-parent/.git\:
 RepositorySearchDialogSearchPath=/Users/kxy/Documents/workspace-sts-3.9.3.RELEASE/atguigu-parent
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

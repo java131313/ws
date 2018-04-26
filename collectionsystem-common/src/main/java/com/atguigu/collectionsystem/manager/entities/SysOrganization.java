@@ -27,7 +27,7 @@ public class SysOrganization {
     private String postCode;
 
     private String fax;
-
+//机构类型
     private Byte type;
 
     private Integer orderNo;

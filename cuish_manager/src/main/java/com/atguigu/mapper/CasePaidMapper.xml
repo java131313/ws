@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.CasePaidMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.bean.CasePaid">
+   
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="case_id" jdbcType="VARCHAR" property="caseId" />
+    <result column="ptp_time" jdbcType="TIMESTAMP" property="ptpTime" />
+    <result column="ptp_money" jdbcType="DECIMAL" property="ptpMoney" />
+    <result column="cp_time" jdbcType="TIMESTAMP" property="cpTime" />
+    <result column="cp_money" jdbcType="DECIMAL" property="cpMoney" />
+    <result column="paid_time" jdbcType="TIMESTAMP" property="paidTime" />
+    <result column="paid_num" jdbcType="DECIMAL" property="paidNum" />
+    <result column="sur_user" jdbcType="VARCHAR" property="surUser" />
+    <result column="sur_time" jdbcType="TIMESTAMP" property="surTime" />
+    <result column="del_user" jdbcType="VARCHAR" property="delUser" />
+    <result column="del_time" jdbcType="TIMESTAMP" property="delTime" />
+    <result column="m_paid" jdbcType="DECIMAL" property="mPaid" />
+    <result column="cpm_paid" jdbcType="DECIMAL" property="cpmPaid" />
+    <result column="se_no" jdbcType="VARCHAR" property="seNo" />
+    <result column="cm_paid" jdbcType="DECIMAL" property="cmPaid" />
+    <result column="back_paid" jdbcType="DECIMAL" property="backPaid" />
+    <result column="back_paid_rate" jdbcType="DECIMAL" property="backPaidRate" />
+    <result column="pback_paid" jdbcType="DECIMAL" property="pbackPaid" />
+    <result column="entrust_paid" jdbcType="DECIMAL" property="entrustPaid" />
+    <result column="entrust_paid_rate" jdbcType="DECIMAL" property="entrustPaidRate" />
+    <result column="last_debt_m" jdbcType="DECIMAL" property="lastDebtM" />
+    <result column="left_amt" jdbcType="DECIMAL" property="leftAmt" />
+    <result column="create_emp_id" jdbcType="VARCHAR" property="createEmpId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_emp_id" jdbcType="VARCHAR" property="modifyEmpId" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_derate" jdbcType="CHAR" property="isDerate" />
+    <result column="in_derate" jdbcType="DECIMAL" property="inDerate" />
+    <result column="out_derate" jdbcType="DECIMAL" property="outDerate" />
+    <result column="cancel_reason" jdbcType="VARCHAR" property="cancelReason" />
+    <result column="repay_type" jdbcType="CHAR" property="repayType" />
+    <result column="operate_emp_id" jdbcType="VARCHAR" property="operateEmpId" />
+    <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime" />
+    <result column="sur_remark" jdbcType="LONGVARCHAR" property="surRemark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    
+    delete from case_paid
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.bean.CasePaid">
+    
+    insert into case_paid (id, state, case_id, 
+      ptp_time, ptp_money, cp_time, 
+      cp_money, paid_time, paid_num, 
+      sur_user, sur_time, del_user, 
+      del_time, m_paid, cpm_paid, 
+      se_no, cm_paid, back_paid, 
+      back_paid_rate, pback_paid, entrust_paid, 
+      entrust_paid_rate, last_debt_m, left_amt, 
+      create_emp_id, create_time, modify_emp_id, 
+      modify_time, version, is_derate, 
+      in_derate, out_derate, cancel_reason, 
+      repay_type, operate_emp_id, operate_time, 
+      sur_remark)
+    values (#{id,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{caseId,jdbcType=VARCHAR}, 
+      #{ptpTime,jdbcType=TIMESTAMP}, #{ptpMoney,jdbcType=DECIMAL}, #{cpTime,jdbcType=TIMESTAMP}, 
+      #{cpMoney,jdbcType=DECIMAL}, #{paidTime,jdbcType=TIMESTAMP}, #{paidNum,jdbcType=DECIMAL}, 
+      #{surUser,jdbcType=VARCHAR}, #{surTime,jdbcType=TIMESTAMP}, #{delUser,jdbcType=VARCHAR}, 
+      #{delTime,jdbcType=TIMESTAMP}, #{mPaid,jdbcType=DECIMAL}, #{cpmPaid,jdbcType=DECIMAL}, 
+      #{seNo,jdbcType=VARCHAR}, #{cmPaid,jdbcType=DECIMAL}, #{backPaid,jdbcType=DECIMAL}, 
+      #{backPaidRate,jdbcType=DECIMAL}, #{pbackPaid,jdbcType=DECIMAL}, #{entrustPaid,jdbcType=DECIMAL}, 
+      #{entrustPaidRate,jdbcType=DECIMAL}, #{lastDebtM,jdbcType=DECIMAL}, #{leftAmt,jdbcType=DECIMAL}, 
+      #{createEmpId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyEmpId,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{version,jdbcType=INTEGER}, #{isDerate,jdbcType=CHAR}, 
+      #{inDerate,jdbcType=DECIMAL}, #{outDerate,jdbcType=DECIMAL}, #{cancelReason,jdbcType=VARCHAR}, 
+      #{repayType,jdbcType=CHAR}, #{operateEmpId,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP}, 
+      #{surRemark,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.bean.CasePaid">
+    
+    update case_paid
+    set state = #{state,jdbcType=INTEGER},
+      case_id = #{caseId,jdbcType=VARCHAR},
+      ptp_time = #{ptpTime,jdbcType=TIMESTAMP},
+      ptp_money = #{ptpMoney,jdbcType=DECIMAL},
+      cp_time = #{cpTime,jdbcType=TIMESTAMP},
+      cp_money = #{cpMoney,jdbcType=DECIMAL},
+      paid_time = #{paidTime,jdbcType=TIMESTAMP},
+      paid_num = #{paidNum,jdbcType=DECIMAL},
+      sur_user = #{surUser,jdbcType=VARCHAR},
+      sur_time = #{surTime,jdbcType=TIMESTAMP},
+      del_user = #{delUser,jdbcType=VARCHAR},
+      del_time = #{delTime,jdbcType=TIMESTAMP},
+      m_paid = #{mPaid,jdbcType=DECIMAL},
+      cpm_paid = #{cpmPaid,jdbcType=DECIMAL},
+      se_no = #{seNo,jdbcType=VARCHAR},
+      cm_paid = #{cmPaid,jdbcType=DECIMAL},
+      back_paid = #{backPaid,jdbcType=DECIMAL},
+      back_paid_rate = #{backPaidRate,jdbcType=DECIMAL},
+      pback_paid = #{pbackPaid,jdbcType=DECIMAL},
+      entrust_paid = #{entrustPaid,jdbcType=DECIMAL},
+      entrust_paid_rate = #{entrustPaidRate,jdbcType=DECIMAL},
+      last_debt_m = #{lastDebtM,jdbcType=DECIMAL},
+      left_amt = #{leftAmt,jdbcType=DECIMAL},
+      create_emp_id = #{createEmpId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_emp_id = #{modifyEmpId,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      version = #{version,jdbcType=INTEGER},
+      is_derate = #{isDerate,jdbcType=CHAR},
+      in_derate = #{inDerate,jdbcType=DECIMAL},
+      out_derate = #{outDerate,jdbcType=DECIMAL},
+      cancel_reason = #{cancelReason,jdbcType=VARCHAR},
+      repay_type = #{repayType,jdbcType=CHAR},
+      operate_emp_id = #{operateEmpId,jdbcType=VARCHAR},
+      operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      sur_remark = #{surRemark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    
+    select id, state, case_id, ptp_time, ptp_money, cp_time, cp_money, paid_time, paid_num, 
+    sur_user, sur_time, del_user, del_time, m_paid, cpm_paid, se_no, cm_paid, back_paid, 
+    back_paid_rate, pback_paid, entrust_paid, entrust_paid_rate, last_debt_m, left_amt, 
+    create_emp_id, create_time, modify_emp_id, modify_time, version, is_derate, in_derate, 
+    out_derate, cancel_reason, repay_type, operate_emp_id, operate_time, sur_remark
+    from case_paid
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+   
+    select id, state, case_id, ptp_time, ptp_money, cp_time, cp_money, paid_time, paid_num, 
+    sur_user, sur_time, del_user, del_time, m_paid, cpm_paid, se_no, cm_paid, back_paid, 
+    back_paid_rate, pback_paid, entrust_paid, entrust_paid_rate, last_debt_m, left_amt, 
+    create_emp_id, create_time, modify_emp_id, modify_time, version, is_derate, in_derate, 
+    out_derate, cancel_reason, repay_type, operate_emp_id, operate_time, sur_remark
+    from case_paid
+  </select>
+</mapper>
